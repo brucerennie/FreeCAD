@@ -1152,8 +1152,6 @@ void TaskMassProperties::tryUpdate()
             return;
         }
 
-        Measure::Result::init();
-
         App::DocumentObject* obj = doc->getObject("MassPropertiesPreview");
         if (!obj) {
             obj = doc->addObject("Measure::Result", "MassPropertiesPreview");
@@ -1371,8 +1369,6 @@ void TaskMassProperties::saveResult()
     }
 
     doc->openTransaction("Add Mass Properties");
-
-    Measure::Result::init();
 
     auto group = freecad_cast<App::DocumentObjectGroup*>(doc->getObject("Measurements"));
 
