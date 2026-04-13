@@ -27,6 +27,7 @@
 #include <Inventor/nodes/SoAnnotation.h>
 #include <Inventor/nodes/SoBaseColor.h>
 #include <Inventor/nodes/SoCoordinate3.h>
+#include <Inventor/nodes/SoDepthBuffer.h>
 #include <Inventor/nodes/SoDrawStyle.h>
 #include <Inventor/nodes/SoImage.h>
 #include <Inventor/nodes/SoIndexedLineSet.h>
@@ -77,6 +78,11 @@ void ViewProviderMassPropertiesResult::attach(App::DocumentObject* obj)
 
     lcsSwitch = new SoSwitch(SO_SWITCH_NONE);
     annotation->addChild(lcsSwitch);
+
+    auto* markerDepth = new SoDepthBuffer();
+    markerDepth->function = SoDepthBufferElement::LESS;
+    markerDepth->range = SbVec2f(0.0f, 0.001f);
+    annotation->addChild(markerDepth);
 
     auto* seperator = new SoSeparator();
     lcsSwitch->addChild(seperator);
@@ -166,8 +172,8 @@ void ViewProviderMassPropertiesResult::attach(App::DocumentObject* obj)
         annotation->addChild(markerSep);
     };
 
-    addMarker("COV-Icon", covTranslation);
     addMarker("COG-Icon", cogTranslation);
+    addMarker("COV-Icon", covTranslation);
 
     updateCenterMarkers();
     updatePrincipalAxesMarker();

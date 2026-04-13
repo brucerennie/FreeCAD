@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (1:1.2.2+202305151914+b0a8486541)"
-   sodipodi:docname="center_of_gravity.64px.svg"
+   sodipodi:docname="COG-Icon.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="9.5144352"
-     inkscape:cx="96.590074"
-     inkscape:cy="42.093933"
+     inkscape:zoom="19.02887"
+     inkscape:cx="53.55021"
+     inkscape:cy="32.976209"
      inkscape:window-width="2560"
      inkscape:window-height="1368"
      inkscape:window-x="0"
@@ -43,27 +43,25 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <ellipse
+    <circle
        style="fill:#000000;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round"
        id="path236-7"
        cx="8.4666662"
-       cy="8.598958"
-       rx="7.9375"
-       ry="7.8052087" />
-    <ellipse
+       cy="8.4666662"
+       r="7.9375" />
+    <circle
        style="fill:#ffffff;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round"
        id="path398-5"
        cx="8.4666662"
-       cy="8.598958"
-       rx="7.4083333"
-       ry="7.2760415" />
+       cy="8.4666662"
+       r="6.8791666" />
     <path
        id="path398-6-3"
        style="fill:#000000;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round"
-       d="m 1.5926677,8.4666667 a 6.8791671,6.7468748 0 0 0 -0.0052,0.1322916 6.8791671,6.7468748 0 0 0 6.879167,6.7468747 V 8.4666667 Z" />
+       d="m 2.6502333,8.4666668 a 5.8208015,5.7088944 0 0 0 -0.0044,0.111939 A 5.8208015,5.7088944 0 0 0 8.4666346,14.2875 V 8.4666668 Z" />
     <path
        id="rect452-5"
-       style="fill:#000000;stroke:none;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round"
-       d="M 8.4666667,1.8520833 V 8.4666667 H 15.344283 A 6.8791671,6.7468748 0 0 0 8.4666667,1.8520833 Z" />
+       style="fill:#000000;stroke:none;stroke-width:0.529165;stroke-linecap:round;stroke-linejoin:round"
+       d="M 8.4666668,2.6458333 V 8.4666667 H 14.2875 A 5.822146,5.9372499 0 0 0 8.4666668,2.6458333 Z" />
   </g>
 </svg>
