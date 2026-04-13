@@ -33,8 +33,6 @@
 #include <Inventor/nodes/SoIndexedLineSet.h>
 #include <Inventor/nodes/SoMaterial.h>
 #include <Inventor/nodes/SoMaterialBinding.h>
-#include <Inventor/nodes/SoText2.h>
-#include <Inventor/nodes/SoFont.h>
 #include <Inventor/nodes/SoSwitch.h>
 #include <Inventor/nodes/SoTranslation.h>
 
@@ -123,16 +121,6 @@ void ViewProviderMassPropertiesResult::attach(App::DocumentObject* obj)
     lines->materialIndex.setValues(0, 3, materialIndices);
     lcsSep->addChild(lines);
 
-    auto* font = new SoFont();
-    // Using the preferences for the datum font size, since there is no preference for
-    // MassProperties And that this viewprovider is very close to the datum one
-    static const float size = App::GetApplication()
-                                  .GetParameterGroupByPath("User parameter:BaseApp/Preferences/View")
-                                  ->GetFloat("DatumFontSize", 15.0);
-    font->size = size;
-    lcsSep->addChild(font);
-
-
     auto addAxisLabel =
         [lcsSep](const char* text, SoBaseColor*& colorOut, SoTranslation*& translationOut) {
             auto* labelSep = new SoSeparator();
@@ -143,8 +131,14 @@ void ViewProviderMassPropertiesResult::attach(App::DocumentObject* obj)
             translationOut = new SoTranslation();
             labelSep->addChild(translationOut);
 
-            auto* labelText = new SoText2();
+            auto* labelText = new Gui::SoFrameLabel();
             labelText->string.setValue(text);
+            labelText->horAlignment = SoImage::CENTER;
+            labelText->vertAlignment = SoImage::HALF;
+            labelText->border = false;
+            labelText->frame = false;
+            labelText->textUseBaseColor = true;
+            labelText->size = 8;
             labelSep->addChild(labelText);
 
             lcsSep->addChild(labelSep);
