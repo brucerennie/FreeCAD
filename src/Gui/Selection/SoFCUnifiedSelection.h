@@ -56,8 +56,11 @@ struct Candidate
     int priority {0};
     bool closeToFirst {false};
     bool isAnnotation {false};
+    bool hasGate {false};
+    bool passesGate {false};
 };
 
+GuiExport bool canFinalizeSinglePick(const std::vector<Candidate>& picked);
 GuiExport std::size_t choosePreferredPick(const std::vector<Candidate>& picked);
 
 }  // namespace SelectionPickPolicy
@@ -123,6 +126,8 @@ private:
         std::string element;
     };
 
+    static bool passesSelectionGate(const PickedInfo&);
+    static bool hasSelectionGate(const PickedInfo&);
     static SelectionPickPolicy::Candidate getPickCandidate(
         const PickedInfo&,
         const Document*,
@@ -132,6 +137,7 @@ private:
         const std::vector<PickedInfo>&,
         const Document*
     );
+    static bool canFinalizeSinglePick(const std::vector<PickedInfo>&);
 
     bool setPreselect(const PickedInfo&);
     bool setPreselect(
