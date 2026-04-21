@@ -87,6 +87,11 @@ MayaGestureNavigationStyle::MayaGestureNavigationStyle()
 
 MayaGestureNavigationStyle::~MayaGestureNavigationStyle() = default;
 
+int MayaGestureNavigationStyle::selectionMoveThreshold() const
+{
+    return mouseMoveThreshold;
+}
+
 const char* MayaGestureNavigationStyle::mouseButtons(ViewerMode mode)
 {
     switch (mode) {

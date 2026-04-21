@@ -278,6 +278,11 @@ protected:
     void addToLog(const SbVec2s pos, const SbTime time);
 
     void syncModifierKeys(const SoEvent* const ev);
+    virtual int selectionMoveThreshold() const;
+    void updateSelectionStartPosition(SbBool press, const SbVec2s& position);
+    void setSelectionStartPosition(const SbVec2s& position);
+    void clearSelectionStartPosition();
+    bool tryStartBoxSelection(const SoLocation2Event* const ev, bool additiveSelection = false);
 
 protected:
     struct
@@ -314,6 +319,7 @@ protected:
     AbstractMouseSelection* mouseSelection {nullptr};
     std::vector<SbVec2s> pcPolygon;
     SelectionRole selectedRole;
+    std::optional<SbVec2s> selectionStartPosition;
     //@}
 
     /** @name Spinning data */
@@ -471,6 +477,7 @@ public:
 
 protected:
     void zoomByCursor(const SbVec2f& thispos, const SbVec2f& prevpos) override;
+    int selectionMoveThreshold() const override;
 
     SbBool processSoEvent(const SoEvent* const ev) override;
 

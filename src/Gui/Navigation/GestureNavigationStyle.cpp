@@ -958,6 +958,11 @@ GestureNavigationStyle::GestureNavigationStyle()
 
 GestureNavigationStyle::~GestureNavigationStyle() = default;
 
+int GestureNavigationStyle::selectionMoveThreshold() const
+{
+    return mouseMoveThreshold;
+}
+
 const char* GestureNavigationStyle::mouseButtons(ViewerMode mode)
 {
     switch (mode) {
