@@ -1615,7 +1615,9 @@ class TestExport2Integration(unittest.TestCase):
                 f"Should have only 1 G1 command when duplicates suppressed, found {g1_count}",
             )
             self.assertEqual(
-                suppressed_count, 3, f"Should have 3 suppressed G1 moves, found {suppressed_count}, in\n{gcode}"
+                suppressed_count,
+                3,
+                f"Should have 3 suppressed G1 moves, found {suppressed_count}, in\n{gcode}",
             )
 
     def test128b_bare_command_suppressed_when_all_params_duplicate(self):

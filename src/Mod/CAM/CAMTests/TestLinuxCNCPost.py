@@ -111,8 +111,8 @@ class TestLinuxCNCPost(PathTestUtils.PathTestBase):
         gcode = self.post.export2()[0][1]
         lines = gcode.splitlines()
         # Preamble stuff, up to next piece, which should be unit-command (`_collect_unit_command`)
-        idx = lines.index("G21") # throws IndexError if unexpectedly missing
-        preamble = "\n".join( lines[ :idx ] )
+        idx = lines.index("G21")  # throws IndexError if unexpectedly missing
+        preamble = "\n".join(lines[:idx])
         return gcode, preamble
 
     def test_blend_mode_exact_path(self):
