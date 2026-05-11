@@ -635,7 +635,6 @@ SET(Dialog_Customize_SRCS
     ${Dialog_Customize_HPP_SRCS}
     Dialogs/DlgActions.ui
     Dialogs/DlgChooseIcon.ui
-    Dialogs/DlgKeyboard.ui
     Dialogs/DlgToolbars.ui
 )
 
@@ -696,6 +695,7 @@ SET(Dialog_Settings_SRCS
     ${Dialog_Settings_CPP_SRCS}
     ${Dialog_Settings_HPP_SRCS}
     Dialogs/DlgOnlineHelp.ui
+    Dialogs/DlgKeyboard.ui
     Dialogs/DlgPreferences.ui
     PreferencePages/DlgSettings3DView.ui
     PreferencePages/DlgSettingsCacheDirectory.ui
